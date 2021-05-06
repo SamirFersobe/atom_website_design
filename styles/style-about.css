@@ -1,0 +1,143 @@
+#underline {
+	width: 74px;   // different for this page
+	height: 2px;
+	position: relative;
+	top: -20px;
+	background-color: #000000;
+	transition: left 0.0s;
+	clear: left;
+	left: 1150px; /*1440 - 68 - (74 * 3);*/   
+	
+}
+
+
+.header-banner {
+	position: relative;
+	background-image: url("../images/header-banner-about.jpg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: rgba(255,0,0,0);
+	text-align: center;
+}
+
+
+
+.banner-text-heading {
+   color: #FFFFFF;
+   font-size: 32pt;
+   padding: 9% 0 10% 0;
+}
+
+
+
+.feature-text {        
+    text-align: center;
+    padding-top: 6%;
+    font-size: 14pt;
+    line-height: 150%;
+    color: black;
+}
+
+
+
+.feature-container {   
+	width: 70%;
+	padding-top: 3%;
+	margin: 0 auto;
+	padding-left: 55px;
+	background-color: #EEEEEE;
+	
+}
+
+
+.feature-box {
+	float: left;
+	height: 320px;
+	width: 290px; 
+	margin-right: auto;
+	margin-left: 1.75%;
+	background-color: #EEEEEE;
+	
+}
+
+.feature-box img {
+	display: block;
+	margin: 0 auto;
+	height: 123px;
+	width: 123px;
+}
+
+
+.feature-box-model {
+	text-align: center;
+	font-weight: bold; 
+	padding-bottom: 4%;
+
+}
+
+
+.feature-box-text {
+	display: block;
+	height: 25%;
+	width: 85%;
+	margin: auto;
+	border-style: solid;
+	border-width: 2px;
+	border-left: none;
+	border-right: none;
+	border-top-color: #00cc99;
+	border-bottom-color:#00cc99;
+	font-size: 11pt;
+	text-align: center;
+	line-height: 160%;
+
+}
+
+
+.feature-title {
+	text-align: center;
+	margin: 0 auto;
+    font-size: 20pt;
+	
+}
+
+
+.feature-text-bottom {
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 6.5%;
+    font-size: 12pt;
+    line-height: 160%;
+
+}
+
+
+.footer-banner {
+	position: relative;
+	background-image: url("../images/footer-banner-about.jpg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: rgba(255, 0, 0, 0);
+	text-align: center;
+	
+}
+
+
+
+.footer-banner-text-heading {
+   color: #FFFFFF;
+   font-size: 32pt;
+   padding-top: 9%;
+}
+
+
+.footer-banner-text {
+   color: #FFFFFF;
+   font-size: 18pt;
+   font-weight: lighter;
+   padding-top: 1%;
+   padding-bottom: 7%;
+}
+
