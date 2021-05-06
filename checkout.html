@@ -1,0 +1,107 @@
+
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel=stylesheet type="text/css" href="./styles/style-main.css">
+  <script src="./scripts/menu-script.js"></script>
+  <script src="./scripts/catalog.js"></script>
+  <script src="./scripts/ClientSideValidation.js"></script>
+  <title> Card Validation </title>
+  <style>
+  input {
+      padding: 10px;
+      margin: 4px 0;
+      box-sizing: border-box;
+      border: 2px solid black;
+      border-radius: 4px;
+  }
+
+
+
+  .space{
+    align-content: center;
+    padding:100px;
+  }
+
+  .btn {
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px #666666;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 9px;
+    background: #34b2d9;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background: #34d976;
+    background-image: -webkit-linear-gradient(top, #34d976, #34d976);
+    background-image: -moz-linear-gradient(top, #34d976, #34d976);
+    background-image: -ms-linear-gradient(top, #34d976, #34d976);
+    background-image: -o-linear-gradient(top, #34d976, #34d976);
+    background-image: linear-gradient(to bottom, #34d976, #34d976);
+    text-decoration: none;
+  }
+  </style>
+
+</head>
+<body onload ="init()">
+	<div id="page-wrap">
+    <nav>
+			<ul>
+        <li id="icon"><a href="index.html"><img src="./images/atom-logo.png" alt="logo"></a></li>
+        <li id="cart"><a href="cart.html"><img src="./images/icon_cart.png" alt="cart"></a></li>
+  				<li class="menu-item"><a href="contact.html">連絡</a></li>
+  				<li class="menu-item"><a href="store.html">商品</a></li>
+  				<li class="menu-item"><a href="about.html">会社</a></li>
+  				<li id="underline"></li>
+			</ul>
+		</nav>
+<div class ="space">
+    <h1> ご会計は </h1>
+    <script src="./scripts/listItems.js"></script>
+
+
+
+
+      <h1>支払方法</h1>
+
+
+      <p>名字
+      <input id="Name">
+      <p>氏名
+      <input id ="LastName"><br>
+      <p>クレジットカード情報を入力してください</p>
+      <input id="numb">-
+      <input id="numb2">-
+      <input id="numb3">-
+      <input id="numb4"><br>
+
+      <button type="button" class="btn" onclick="myFunction()">確定</button>
+
+      <p id="demo"></p>
+      <BR>
+</div>
+      <div class="footer">
+        <ul class="footer-list">
+        <li id="follow">フォロー</li>
+        <li class="social"><a href="#facebook"><img src="./images/facebook_social_media.png" alt="facebook"></a>
+        <li class="social"><a href="#twitter"><img src="./images/twitter_social_media.png" alt="twitter"></a>
+        <li class="social"><a href="#google"><img src="./images/google_plus_social_media.png" alt="google"></a>
+        <li class="footer-menu-item"><a href="contact.html">連絡</a></a>
+        <li class="footer-menu-item"><a href="store.html">商品</a>
+        <li class="footer-menu-item"><a href="about.html">弊社</a>
+      </ul>
+      <p>&#x40;2018 （株）Atom  版権所有.
+
+      </div>
+
+	</div> <!-- end #page-wrap -->
+
+</body>
+</html>

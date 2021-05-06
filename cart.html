@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<script>
+//localStorage.clear();
+function initClick(){
+  var  parent = document.getElementsByTagName('th');
+  for(var i = 4; i < parent.length;i= i+6){
+    parent[i].addEventListener("click",decrease)
+  }
+
+  var  parenting = document.getElementsByTagName('th');
+  for(var i = 5; i < parent.length;i= i+6){
+    parenting[i].addEventListener("click",increase)
+  }
+}
+
+function clearLocalStorage(){
+  document.getElementById("Cleaning").addEventListener("click",cleanup)
+}
+
+function contShop(){
+  document.getElementById("continueShopping").addEventListener("click",continueShopping)
+}
+
+function continueShopping(){
+  window.location= "store.html";
+}
+
+function checkforitems(){
+  document.getElementById("checkout").addEventListener("click",checkLocalStorageLength)
+}
+
+function checkLocalStorageLength(){
+  if(localStorage.length === 0){
+    alert("There are no items in your shopping cart. You will be redirected to the store.")
+    window.location = "store.html";
+  }else{
+    window.location = "checkout.html";
+  }
+}
+function cleanup(){
+  localStorage.clear();
+  location.reload();
+}
+
+function decrease(){
+  var realnode = this.parentNode;
+  var realone= realnode.firstChild.nextSibling;
+  var inhtml = realone.innerHTML;
+  if(Number(localStorage.getItem(inhtml))<= 1 ) {
+    localStorage.removeItem(inhtml);
+    location.reload();
+  }
+  else{
+  var n = Number(localStorage.getItem(inhtml))-1;
+  var s = String(n);
+  localStorage.setItem(inhtml,s);
+  location.reload();
+}
+}
+
+function increase(){
+  var realnode = this.parentNode;
+  var realone= realnode.firstChild.nextSibling;
+  var inhtml = realone.innerHTML;
+
+  var n = Number(localStorage.getItem(inhtml))+1;
+  var s = String(n);
+  localStorage.setItem(inhtml,s);
+  location.reload();
+
+}
+
+
+</script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel=stylesheet type="text/css" href="./styles/style-main.css">
+  <script src="./scripts/menu-script.js"></script>
+  <script src="./scripts/catalog.js"></script>
+</head>
+<body onload="initClick();init();clearLocalStorage();checkforitems();contShop()">
+	<div id="page-wrap">
+    <nav>
+			<ul>
+        <li id="icon"><a href="index.html"><img src="./images/atom-logo.png" alt="logo"></a></li>
+        <li id="cart"><a href="cart.html"><img src="./images/icon_cart.png" alt="cart"></a></li>
+  				<li class="menu-item"><a href="contact.html">連絡</a></li>
+  				<li class="menu-item"><a href="store.html">商品</a></li>
+  				<li class="menu-item"><a href="about.html">弊社</a></li>
+  				<li id="underline"></li>
+			</ul>
+		</nav>
+
+
+      <div id="result"></div>
+      <div class="feature-text"> ショッピングカート </div>
+      <div class="feature-container">
+      <table>
+        <tr>
+      <th>商品</th>
+      <th>数</th>
+      <th>値段</th>
+      <th>小計</th>
+      <th></th>
+      <th></th>
+
+    </tr>
+      <script>
+      var finalQuantity=0;
+      var FinalTotal=0;
+          for (var i = 0; i < localStorage.length; i++){
+            var price;
+            var total;
+            document.writeln('<tr>');
+              document.writeln('<th>'+ localStorage.key(i)+'</th>');
+              var quantityString = localStorage.getItem(localStorage.key(i));
+              var quantity = Number(quantityString);
+              document.writeln('<th>'+ localStorage.getItem(localStorage.key(i))+'</th>');//Showing Quantity
+              for(x in catalog){
+                if (true){
+                  var currentItems = catalog[x];
+                  for ( var g = 0; g < currentItems.length; g++){
+                    //alert(currentItems[g].itemDescription);
+                    if(String(currentItems[g].itemDescription) === String(localStorage.key(i))){
+                      price = currentItems[g].itemPrice;
+                    }
+                  }
+                }
+              }
+              document.writeln('<th>'+ price +'</th>');
+              total = quantity*price;
+              total = Math.round(total * 100) / 100;
+            if(quantity%2 === 0){
+              document.writeln('<th>'+ total+'</th>');
+            }else{
+              document.writeln('<th>'+ total+'</th>');
+            }
+
+            document.writeln('<th><button >-</button></th>');
+            document.writeln('<th><button >+</button></th>');
+
+            document.writeln('</tr>');
+            FinalTotal = FinalTotal+ total;
+            finalQuantity= quantity+ finalQuantity;
+
+
+          }
+
+          FinalTotal = Math.round(FinalTotal * 100) / 100;
+          document.writeln('<tr>');
+          document.writeln('<th></th>');
+          document.writeln('<th></th>');
+          document.writeln('<th> 合計 </th>');
+          if(finalQuantity%2 === 0){
+          document.writeln('<th>¥'+ FinalTotal +'</th>');
+
+        }else {
+          document.writeln('<th>¥'+ FinalTotal +'</th>');
+
+        }
+          document.writeln('</tr>')
+      </script>
+    </table>
+  <br>
+
+      <button type="submit" class="derecha" id="checkout" >レジに進む</button>
+      <button type="button" id="Cleaning">すべてを削除 </button>
+      <button type="submit" class="derecha" id="continueShopping" >買い物を続ける</button>
+
+
+    </div>
+
+
+    <div class="footer">
+      <ul class="footer-list">
+      <li id="follow">フォロー</li>
+      <li class="social"><a href="#facebook"><img src="./images/facebook_social_media.png" alt="facebook"></a>
+      <li class="social"><a href="#twitter"><img src="./images/twitter_social_media.png" alt="twitter"></a>
+      <li class="social"><a href="#google"><img src="./images/google_plus_social_media.png" alt="google"></a>
+      <li class="footer-menu-item"><a href="contact.html">連絡</a></a>
+      <li class="footer-menu-item"><a href="store.html">商品</a>
+      <li class="footer-menu-item"><a href="about.html">弊社</a>
+    </ul>
+    <p>&#x40; 2018 （株）Atom  版権所有.
+
+    </div>
+
+
+	</div> <!-- end #page-wrap -->
+
+
+</body>
+</html>
