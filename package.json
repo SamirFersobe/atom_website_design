@@ -1,0 +1,26 @@
+{
+  "name": "atom_website_design",
+  "version": "1.0.0",
+  "description": "This project was done for the  Website Design and Development Class (CMPT 281.3) on the fall/winter semester of 2016 during my exchange program with University of Saskatchewan. I have repurposed this project for a class in my technical school so most of the information will be in Japanese.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamirFersobe/atom_website_design.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamirFersobe/atom_website_design/issues"
+  },
+  "homepage": "https://github.com/SamirFersobe/atom_website_design#readme",
+  "devDependencies": {
+    "@layer0/cli": "^4.19.3",
+    "@layer0/core": "^4.19.3",
+    "@layer0/devtools": "^4.19.3",
+    "@layer0/prefetch": "^4.19.3"
+  }
+}
